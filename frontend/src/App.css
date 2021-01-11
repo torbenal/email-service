@@ -1,6 +1,7 @@
 .container {
   display: flex;
   height: 100vh;
+  overflow: hidden;
 }
 
 /* Column left */
@@ -10,24 +11,9 @@
   border-right: 1px solid #EEE;
 }
 
-.filter-type {
-  padding: 1em;
-  text-align: center;
-}
-
-.filter-type svg {
-  font-size: 1.3em;
-}
-
-.filter-type div {
-  margin-top: 0.3em;
-}
-
-/* Column right */
-
-.column-right {
-  flex-grow: 1;
-  display: flex;
+.list {
+  overflow-y: auto;
+  height: 100vh;
 }
 
 .list-obj {
@@ -45,15 +31,26 @@
   margin: 0.2em 0;
 }
 
-.list-obj-subject {
+.list-obj-subject, .list-obj-body {
   font-size: 0.9em;
   margin: 0.2em 0;
+  overflow: hidden;
+}
+
+.list-obj-subject {
+  height: 1.1em;
 } 
 
 .list-obj-body {
-  font-size: 0.9em;
   color: #797979;
-  margin: 0.2em 0;
+  height: 2.3em;
+  overflow-wrap: anywhere;
+}
+/* Column right */
+
+.column-right {
+  flex-grow: 1;
+  display: flex;
 }
 
 .selected-email {
@@ -63,6 +60,9 @@
 .preview-subject {
   padding: 1em;
   border-bottom: 1px solid #EEE;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 72vw;
 }
 
 .preview-content {
@@ -85,6 +85,10 @@
 
 .preview-body {
   margin-top: 2em;
+  overflow-y: auto;
+  text-overflow: ellipsis;
+  overflow-wrap: anywhere;
+  height: 85vh;
 }
 
 .compose-container {
@@ -116,16 +120,14 @@
 .compose-input {
   display: flex;
   flex-direction: column;
-  margin-top: 0.4em;
   flex-grow: 1;
 }
 
 .compose-input input, .compose-input textarea {
-  padding: 0.5em;
+  padding: 0.5em 1em;
   outline: none;
   border: none;
   resize: none;
-  margin: 0 0.5em;
   font-family: inherit;
   border-bottom: 1px solid #EEE;
 }
@@ -139,11 +141,15 @@
   height: 25em;
 }
 
+.compose-footer {
+  background-color: #FFF;
+  padding: 0.5em;
+}
+
 .compose-button {
   padding: 0.7em;
   background-color: #136AEB;
   width: fit-content;
-  margin: 0.5em;
   border-radius: 5px;
   color: #FFF;
   cursor: pointer;
