@@ -13,3 +13,6 @@ postgres.env:
  - `POSTGRES_USER`
  - `POSTGRES_PASSWORD`
  - `POSTGRES_DB`
+
+ To run: `docker-compose up --build` \
+ Hosted here: http://206.189.12.171/
