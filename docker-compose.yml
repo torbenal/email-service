@@ -7,7 +7,7 @@ services:
           context: ./frontend
           dockerfile: Dockerfile
       ports:
-          - "3000:80"
+          - 3000:80
       volumes: 
           - ./frontend:/app
           - /app/node_modules
@@ -17,6 +17,7 @@ services:
     postgresdb:
       image: "postgres:12"
       container_name: postgresdb
+      restart: unless-stopped
       env_file: 
         - ./backend/postgres.env
       ports:
@@ -24,7 +25,7 @@ services:
       volumes:
         - db_volume:/var/lib/postgresql/data
       networks:
-      - backend
+        - backend
 
     api:
       build: 
