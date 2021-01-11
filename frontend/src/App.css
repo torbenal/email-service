@@ -1,0 +1,154 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Column left */
+
+.column-left {
+  width: 25%;
+  border-right: 1px solid #EEE;
+}
+
+.filter-type {
+  padding: 1em;
+  text-align: center;
+}
+
+.filter-type svg {
+  font-size: 1.3em;
+}
+
+.filter-type div {
+  margin-top: 0.3em;
+}
+
+/* Column right */
+
+.column-right {
+  flex-grow: 1;
+  display: flex;
+}
+
+.list-obj {
+  padding: 1em;
+  cursor: pointer;
+  border-left: 4px solid #FFF;
+}
+
+.list-obj-selected {
+  background-color: #E7F2FB;
+  border-left: 4px solid #136AEB;
+}
+
+.list-obj-sender {
+  margin: 0.2em 0;
+}
+
+.list-obj-subject {
+  font-size: 0.9em;
+  margin: 0.2em 0;
+} 
+
+.list-obj-body {
+  font-size: 0.9em;
+  color: #797979;
+  margin: 0.2em 0;
+}
+
+.selected-email {
+  flex-grow: 1;
+}
+
+.preview-subject {
+  padding: 1em;
+  border-bottom: 1px solid #EEE;
+}
+
+.preview-content {
+  padding: 1em;
+}
+
+.preview-sender {
+  display: flex;
+}
+
+.preview-sender-name {
+  font-weight: bold;
+  font-size: 1em;
+  margin-right: 0.3em;
+}
+
+.preview-receiver {
+  margin-top: 0.3em;
+}
+
+.preview-body {
+  margin-top: 2em;
+}
+
+.compose-container {
+  position: absolute;
+  bottom: 0;
+  right: 5em;
+  width: 25em;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px 5px 0 0;
+}
+
+.compose-header {
+  background-color: #404040;
+  border-radius: 5px 5px 0 0;
+  padding: 0.7em;
+  color: #FFF;
+  font-size: 0.9em;
+  display: flex;
+}
+
+.compose-header-minimize {
+  margin-left: auto;
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+
+.compose-input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.4em;
+  flex-grow: 1;
+}
+
+.compose-input input, .compose-input textarea {
+  padding: 0.5em;
+  outline: none;
+  border: none;
+  resize: none;
+  margin: 0 0.5em;
+  font-family: inherit;
+  border-bottom: 1px solid #EEE;
+}
+
+.compose-to, .compose-subject {
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.compose-body {
+  flex-grow: 1;
+  height: 25em;
+}
+
+.compose-button {
+  padding: 0.7em;
+  background-color: #136AEB;
+  width: fit-content;
+  margin: 0.5em;
+  border-radius: 5px;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.compose-sending {
+  margin: auto;
+}
