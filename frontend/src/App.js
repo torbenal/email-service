@@ -12,14 +12,17 @@ function App() {
   const [sending, setSending] = useState(false)
   const [minimized, setMinimized] = useState(false)
 
-  function refreshEmails() {
-    axios.get('/api/emails').then(response => {
+  async function refreshEmails() {
+    return axios.get('/api/emails').then(response => {
       setEmails(response.data)
+      return response.data
     })
   }
 
   useEffect(() => {
-    refreshEmails()
+    refreshEmails().then((data) => {
+      setSelectedEmail(data[0].email_id)
+    })
   }, []);
 
   function sendEmail() {
