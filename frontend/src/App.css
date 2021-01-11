@@ -89,6 +89,7 @@
   text-overflow: ellipsis;
   overflow-wrap: anywhere;
   height: 85vh;
+  white-space: pre-line;
 }
 
 .compose-container {
